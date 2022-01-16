@@ -1,10 +1,9 @@
 import "./App.css";
 import { NavigationBar } from "./navigation/navigation-component.jsx";
 import IntroPage from "./Pages/introPage/introPage-main/introPage.component";
-import { BrowserRouter, Route, Routes, Router } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import StandingsPage from "./Pages/StandingsPage/StandingsPage-main/standingsPage-component";
 import DriversStandingsPage from "./Pages/StandingsPage/DriversStandingsPage/driversStandingsPage-component";
-import { StandingsPageOptions } from "./Pages/StandingsPage/StandingsPage-options/standingsPage-options-component";
 
 function App() {
   return (
@@ -13,12 +12,15 @@ function App() {
         <NavigationBar />
       </div>
       <div className="App-body">
-        <div>
-          <Routes>
-            <Route path="/" element={<IntroPage />} />
-            <Route exact path="/standings" element={<StandingsPage />}></Route>
-          </Routes>
-        </div>
+        <Routes>
+          <Route path="/" element={<IntroPage />} />
+          <Route exact path="/standings" element={<StandingsPage />} />
+          <Route path="/standings/drivers" element={<DriversStandingsPage />} />
+          <Route
+            path="standings/constructors"
+            element={<DriversStandingsPage />}
+          />
+        </Routes>
       </div>
     </div>
   );

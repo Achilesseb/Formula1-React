@@ -1,5 +1,4 @@
 import React from "react";
-import { useParams } from "react-router-dom";
 import "./driversStandingsPage.styles.scss";
 
 class DriversStandingsPage extends React.Component {
@@ -22,25 +21,36 @@ class DriversStandingsPage extends React.Component {
       });
   }
   render() {
-    const StandingItems = () =>
+    const StandingTable = () =>
       this.state.standings.map((standings) => {
-        const { position, points } = standings;
-        const { familyName, givenName } = standings.Driver;
+        let data = [];
+        const { position, points, wins } = standings;
+        const { givenName, familyName, permanentNumber } = standings.Driver;
         return (
-          <tr className="driver-standing">
-            <th className="driver-standing-name">{`${
+          <tr className="driver-standigs-table-row">
+            <td className="driver-standigs-table-cell">{position}</td>
+            <td className="driver-standigs-table-cell">{`${
               givenName + " " + familyName
-            }`}</th>
-            <th className="driver-standing-points">{points}pts</th>
+            }`}</td>
+            <td className="driver-standigs-table-cell">{points}</td>
+            <td className="driver-standigs-table-cell">{wins}</td>
+            <td className="driver-standigs-table-cell">{permanentNumber}</td>
           </tr>
         );
       });
     return (
       <div className="Standings">
         <div className="Standings-label">2021 Current Standings</div>
-        <table className="Standings-table">
-          <tbody>
-            <StandingItems />
+        <table className="driver-standigs-table">
+          <tbody className="driver-standigs-table-body">
+            <tr className="driver-standigs-table-row-label">
+              <td className="driver-standigs-table-cell">Position</td>
+              <td className="driver-standigs-table-cell">Name</td>
+              <td className="driver-standigs-table-cell">Points</td>
+              <td className="driver-standigs-table-cell">Wins</td>
+              <td className="driver-standigs-table-cell">Number</td>
+            </tr>
+            <StandingTable />
           </tbody>
         </table>
       </div>

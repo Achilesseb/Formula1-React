@@ -7,7 +7,7 @@ export const StandingsPageOptions = () => {
   return (
     <div className="standings-page">
       <nav className="standings-nav">
-        <Link to="/standings/drivers" className="driverStandings-option">
+        <Link to="drivers" className="driverStandings-option">
           Driver Standings
         </Link>
         <Link
@@ -17,18 +17,6 @@ export const StandingsPageOptions = () => {
           Constructors Standings
         </Link>
       </nav>
-      <div>
-        <Routes>
-          <Route
-            path="/standings/constructors"
-            element={<DriversStandingsPage />}
-          />
-          <Route
-            path="/standings/constructors"
-            element={<DriversStandingsPage />}
-          />
-        </Routes>
-      </div>
     </div>
   );
 };

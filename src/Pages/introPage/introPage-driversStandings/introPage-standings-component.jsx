@@ -42,7 +42,7 @@ class Standings extends React.Component {
           );
         });
     return (
-      <div className="Standings">
+      <div className="Standings-Intro">
         <div className="Standings-label">2021 Current Standings</div>
         <table className="Standings-table">
           <tbody>
