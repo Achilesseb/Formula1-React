@@ -1,0 +1,51 @@
+.standings-page {
+  max-height: 60vh;
+  height: 100%;
+}
+.standings-nav {
+  max-width: 180vh;
+  width: 100%;
+  display: flex;
+  gap: 5vh;
+  justify-content: space-evenly;
+  text-align: center;
+}
+.driverStandings-option {
+  display: flex;
+  align-items: center;
+  max-width: 85vh;
+  min-height: 60vh;
+  height: 100%;
+  width: 100%;
+  font-size: 15vh;
+  font-family: "Press Start 2", cursive;
+  color: white;
+  text-shadow: 1vh 2vh 1vh rgb(214, 104, 104);
+  text-decoration: none;
+  border: 2vh inset #800020;
+  border-radius: 5vh;
+  background-image: url(../StandingsPage-main/driver-standings-image.png);
+  backdrop-filter: blur(5px);
+  background-size: 100% 100%;
+  align-self: center;
+  background-origin: content-box;
+}
+.constructorsStandings-option {
+  display: flex;
+  min-height: 60vh;
+  height: 100%;
+  max-width: 85vh;
+  width: 100%;
+  font-size: 13vh;
+  font-family: "Press Start 2", cursive;
+  color: white;
+  text-shadow: 1vh 2vh 1vh rgba(255, 255, 255, 0.514);
+  text-decoration: none;
+  border: 2vh inset #800020;
+  border-radius: 5vh;
+  background-image: url(../StandingsPage-main/constructors-image.jpg);
+  background-size: 110% 100%;
+  align-self: center;
+  background-origin: content-box;
+  align-items: center;
+}

@@ -1,0 +1,36 @@
+.option {
+  color: white;
+  display: flex;
+  text-decoration: none;
+  transition: background-color 0.5s ease;
+  font-family: "Inconsolata", monospace;
+  font-family: "Press Start 2P", cursive;
+  align-self: center;
+  &.logo {
+  }
+}
+.option:hover {
+  cursor: pointer;
+  padding: 0.5vh;
+  background-color: rgba(0, 0, 0, 0.137);
+  transform: scale(1.05);
+  animation: popOut 0.2s;
+}
+.navigation-links {
+  display: flex;
+  width: 100%;
+
+  justify-content: space-evenly;
+}
+.logo {
+  max-height: 9vh;
+  height: 100%;
+  width: 15vh;
+}
+.logo:hover {
+  cursor: pointer;
+  padding: 0;
+  background-color: inherit;
+  transform: scale(1.1);
+  animation: popOut 0.2s;
+}
