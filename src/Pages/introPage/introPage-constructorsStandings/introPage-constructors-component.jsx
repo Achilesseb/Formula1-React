@@ -4,8 +4,7 @@ import "./introPage-constructors.styles.scss";
 class ConstructorsStandings extends React.Component {
   constructor(props) {
     super(props);
-    this.keyCount = 0;
-    this.createKey = this.createKey.bind(this);
+
     this.state = {
       standings: [],
     };
@@ -22,9 +21,7 @@ class ConstructorsStandings extends React.Component {
         );
       });
   }
-  createKey() {
-    return this.keyCount++;
-  }
+
   render() {
     const ConstructorStandingItems = () =>
       this.state.standings
@@ -36,16 +33,10 @@ class ConstructorsStandings extends React.Component {
           return (
             <tbody>
               <tr className="constructors-standigs-item">
-                <th
-                  key={this.createKey()}
-                  className="constructors-standings-name"
-                >{`${position + ". " + name}`}</th>
-                <th
-                  key={this.createKey}
-                  className="constructors-standings-points"
-                >
-                  {points} pts
-                </th>
+                <th className="constructors-standings-name">{`${
+                  position + ". " + name
+                }`}</th>
+                <th className="constructors-standings-points">{points} pts</th>
               </tr>
             </tbody>
           );
