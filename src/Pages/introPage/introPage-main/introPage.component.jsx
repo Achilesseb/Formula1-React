@@ -1,6 +1,5 @@
 import "./intropage-component.styles.scss";
 import ConstructorsStandings from "../introPage-constructorsStandings/introPage-constructors-component";
-import car from "./f12022-car.png";
 import Standings from "../introPage-driversStandings/introPage-standings-component";
 
 const IntroPage = () => {
@@ -16,7 +15,7 @@ const IntroPage = () => {
 
       <div className="intropage-preview">
         <Standings />
-        <img className="car" src={car} />
+
         <ConstructorsStandings />
       </div>
     </div>

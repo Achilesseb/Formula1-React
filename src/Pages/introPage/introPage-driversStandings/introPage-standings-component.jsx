@@ -29,18 +29,20 @@ class Standings extends React.Component {
           const { points } = standings;
           const { familyName, givenName } = standings.Driver;
           return (
-            <tr className="driver-standing">
-              <th className="driver-standing name">{`${
+            <tr className="constructors-standigs-item">
+              <th className="constructors-standings-name">{`${
                 givenName + " " + familyName
               }`}</th>
-              <th className="driver-standing points">{points}pts</th>
+              <th className="constructors-standings-points">{points}pts</th>
             </tr>
           );
         });
     return (
-      <div className="Standings-Intro">
-        <div className="Standings-label intro">2021 Drivers Standings</div>
-        <table className="Standings-table">
+      <div className="constructors-standings">
+        <div className="constructors-standings-label">
+          2021 Drivers Standings
+        </div>
+        <table className="constructors-standings-table">
           <tbody>
             <StandingItems />
           </tbody>

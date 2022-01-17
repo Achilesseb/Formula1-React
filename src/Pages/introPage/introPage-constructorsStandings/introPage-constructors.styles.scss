@@ -7,34 +7,12 @@
 
 .constructors-standings-table {
   border-spacing: 0;
-  min-width: 50vh;
-  width: 100%;
 }
 
 td {
   text-align: center;
 }
 
-@keyframes pulse {
-  from {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.25);
-  }
-  to {
-    transform: scale(1);
-  }
-}
-
-@keyframes popOut {
-  from {
-    transform: scale(1);
-  }
-  to {
-    transform: scale(1.1);
-  }
-}
 .constructors-standings-label {
   font-size: 3vh;
   margin-bottom: 3vh;
@@ -48,6 +26,10 @@ td {
   border: 1vh double #800020;
   border-radius: 5vh;
   box-shadow: 10px 10px 20px rgb(0, 0, 0);
+  max-height: 40vh;
+  height: 100%;
+  max-width: 60vh;
+  width: 100%;
 }
 .constructors-standings-name {
   display: flex;
