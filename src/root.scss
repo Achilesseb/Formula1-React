@@ -1,0 +1,20 @@
+:root {
+  --color-mercedes: #1be4d0;
+  --color-ferrari: #dc0000;
+  --color-red_bull: #0600ef;
+  --color-alpine: #007ad8;
+  --color-haas: #444444;
+  --color-alphatauri: #2b4562;
+  --color-aston_martin: #185326d3;
+  --color-mclaren: #e07a04;
+  --color-alfa: #900000;
+  --color-williams: #4c8afd;
+  --gradient-primary: linear-gradient(to top left, #da0101e1, #fa000054);
+  --gradient-secondary: linear-gradient(to right, #d1bbbbb0, #4d404056);
+  --gradient-third: linear-gradient(to top, #c4c3c3b0, #d4d1d1cb);
+  --gradient-progressBar: linear-gradient(
+    to right,
+    var(--color-mercedes),
+    var(--color-ferrari)
+  );
+}

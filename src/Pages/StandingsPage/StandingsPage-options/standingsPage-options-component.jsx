@@ -1,18 +1,17 @@
 import React from "react";
 import "./standingsPage-options.styles.scss";
-import { Link, Route, Routes } from "react-router-dom";
-import DriversStandingsPage from "../DriversStandingsPage/driversStandingsPage-component";
+import { Link } from "react-router-dom";
 
 export const StandingsPageOptions = () => {
   return (
     <div className="standings-page">
       <nav className="standings-nav">
-        <Link to="drivers" className="driverStandings-option">
-          Driver Standings
+        <Link to="drivers" className="Standings-main-option drivers">
+          Drivers Standings
         </Link>
         <Link
           to="/standings/constructors"
-          className="constructorsStandings-option"
+          className="Standings-main-option constructors"
         >
           Constructors Standings
         </Link>

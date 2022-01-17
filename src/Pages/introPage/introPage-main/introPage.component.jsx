@@ -13,6 +13,7 @@ const IntroPage = () => {
         <h2>of</h2>
         <h1 className="highlight">Formula 1</h1>
       </div>
+
       <div className="intropage-preview">
         <Standings />
         <img className="car" src={car} />

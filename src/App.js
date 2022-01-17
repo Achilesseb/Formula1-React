@@ -4,6 +4,7 @@ import IntroPage from "./Pages/introPage/introPage-main/introPage.component";
 import { Route, Routes } from "react-router-dom";
 import StandingsPage from "./Pages/StandingsPage/StandingsPage-main/standingsPage-component";
 import DriversStandingsPage from "./Pages/StandingsPage/DriversStandingsPage/driversStandingsPage-component";
+import ConstructorStandingsPage from "./Pages/StandingsPage/ConstructorsStandingsPage/constructorsStandings-component";
 
 function App() {
   return (
@@ -17,8 +18,9 @@ function App() {
           <Route exact path="/standings" element={<StandingsPage />} />
           <Route path="/standings/drivers" element={<DriversStandingsPage />} />
           <Route
-            path="standings/constructors"
-            element={<DriversStandingsPage />}
+            exact
+            path="/standings/constructors"
+            element={<ConstructorStandingsPage />}
           />
         </Routes>
       </div>

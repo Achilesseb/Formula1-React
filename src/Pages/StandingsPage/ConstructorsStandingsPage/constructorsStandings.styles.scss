@@ -1,0 +1,80 @@
+.constructors-standings-page {
+  max-width: 200vh;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: #000000;
+  background-image: linear-gradient(315deg, #000000 0%, #7f8c8d 74%);
+  border: 1vh double #800020;
+  border-radius: 5vh;
+}
+.constructors-standings-page-table {
+  max-width: 150vh;
+  width: 100%;
+}
+.constructors-standings-page-tablebody {
+  display: flex;
+  flex-direction: column;
+  gap: 1vh;
+}
+.constructors-standigs-row-item {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  min-height: 4vh;
+  font-size: 3vh;
+  height: 100%;
+  align-items: center;
+  //   box-shadow: inset 10vh 0vh 0vh 0vh
+  background-image: linear-gradient(320deg, #00000000 50%, #161616e5 100%);
+  //   box-shadow: 0vh 0vh 15vh 15vh rgba(0, 0, 0, 0.39);
+  border-radius: 1vh;
+  text-shadow: 3vh 2vh 5vh rgba(0, 0, 0, 0.233);
+}
+.constructors-standigs-row-item:first-of-type {
+  max-height: 12vh;
+  height: 100%;
+  font-size: 6.2vh;
+  color: white;
+  text-shadow: 3px 2px 5px rgba(255, 0, 0, 0.233);
+}
+.constructors-standings-cell {
+  height: 100%;
+  max-width: 30vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.constructors-standings-page-content {
+  display: flex;
+  width: 100%;
+  max-height: 10vh;
+  height: 100%;
+  font-size: 5vh;
+  font-family: "Orbitron", sans-serif;
+
+  text-transform: uppercase;
+  word-spacing: 2vh;
+  color: rgb(223, 223, 223);
+  &.label {
+    justify-content: center;
+    align-items: center;
+  }
+  &.f1logo {
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+}
+
+.logo-standings {
+  display: flex;
+  height: 12vh;
+  width: 20vh;
+  aspect-ratio: 1;
+  justify-content: flex-end;
+  opacity: 0.9;
+}

@@ -24,6 +24,8 @@
 }
 .App-body {
   background-color: #ffffffd2;
+  max-width: 200vh;
+  width: 100%;
   min-height: 80vh;
   height: auto;
   display: flex;

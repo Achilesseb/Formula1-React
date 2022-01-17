@@ -1,6 +1,11 @@
 .standings-page {
-  max-height: 60vh;
+  display: flex;
+  width: 100%;
   height: 100%;
+  background-color: #000000;
+  background-image: linear-gradient(315deg, #000000 0%, #7f8c8d 74%);
+  justify-content: center;
+  align-items: center;
 }
 .standings-nav {
   max-width: 180vh;
@@ -10,42 +15,30 @@
   justify-content: space-evenly;
   text-align: center;
 }
-.driverStandings-option {
+.Standings-main-option {
   display: flex;
   align-items: center;
   max-width: 85vh;
   min-height: 60vh;
   height: 100%;
-  width: 100%;
-  font-size: 15vh;
-  font-family: "Press Start 2", cursive;
-  color: white;
-  text-shadow: 1vh 2vh 1vh rgb(214, 104, 104);
-  text-decoration: none;
-  border: 2vh inset #800020;
-  border-radius: 5vh;
-  background-image: url(../StandingsPage-main/driver-standings-image.png);
-  backdrop-filter: blur(5px);
-  background-size: 100% 100%;
-  align-self: center;
-  background-origin: content-box;
-}
-.constructorsStandings-option {
-  display: flex;
-  min-height: 60vh;
-  height: 100%;
-  max-width: 85vh;
   width: 100%;
   font-size: 13vh;
   font-family: "Press Start 2", cursive;
   color: white;
-  text-shadow: 1vh 2vh 1vh rgba(255, 255, 255, 0.514);
+  text-shadow: 1vh 2vh 1vh rgb(214, 104, 104);
   text-decoration: none;
-  border: 2vh inset #800020;
+  border: 1.5vh double #8000208f;
   border-radius: 5vh;
-  background-image: url(../StandingsPage-main/constructors-image.jpg);
-  background-size: 110% 100%;
+
+  background-position-x: -2vh;
+  background-position-y: -2vh;
+  background-size: 105% 105%;
   align-self: center;
   background-origin: content-box;
-  align-items: center;
+  &.drivers {
+    background-image: url(../StandingsPage-main/driver-standings-image.png);
+  }
+  &.constructors {
+    background-image: url(../StandingsPage-main/constructors-image.jpg);
+  }
 }
