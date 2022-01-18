@@ -5,6 +5,7 @@ import { Route, Routes } from "react-router-dom";
 import StandingsPage from "./Pages/StandingsPage/StandingsPage-main/standingsPage-component";
 import DriversStandingsPage from "./Pages/StandingsPage/DriversStandingsPage/driversStandingsPage-component";
 import ConstructorStandingsPage from "./Pages/StandingsPage/ConstructorsStandingsPage/constructorsStandings-component";
+import CircuitsPage from "./Pages/CircuitsPage/CircuitsPage-main/circuitsPage-main-component";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
             path="/standings/constructors"
             element={<ConstructorStandingsPage />}
           />
+          <Route path="/circuits" element={<CircuitsPage />} />
         </Routes>
       </div>
     </div>

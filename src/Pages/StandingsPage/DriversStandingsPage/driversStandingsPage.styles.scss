@@ -1,4 +1,6 @@
 .Standings {
+  max-width: 200vh;
+  max-height: 80vh;
   width: 100%;
   height: 100%;
   display: flex;
@@ -11,17 +13,18 @@
   box-shadow: 10px 10px 20px rgb(0, 0, 0);
 }
 table.driver-standigs-table {
-  height: 100%;
+  height: inherit;
 }
 tbody.driver-standigs-table-body {
-  height: 100%;
+  height: inherit;
   flex-direction: column;
 }
 
 .driver-standigs-table-row {
+  width: inherit;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-evenly;
   font-size: 2.1vh;
   color: rgb(255, 255, 255);
   // align-content: center;
@@ -30,7 +33,7 @@ tbody.driver-standigs-table-body {
 }
 .driver-standigs-table-row:nth-child(2) {
   display: flex;
-  font-size: 2.5vh;
+  font-size: 2.3vh;
   margin-bottom: 1vh;
   color: rgb(255, 255, 255);
   text-align: center;
@@ -45,6 +48,7 @@ tbody.driver-standigs-table-body {
   background-color: rgba(252, 252, 252, 0.418);
 }
 .driver-standigs-table-cell {
+  max-width: 30vh;
   width: 100%;
   display: flex;
   justify-content: space-evenly;
@@ -54,7 +58,7 @@ tbody.driver-standigs-table-body {
 .Standings-label {
   display: flex;
   width: 100%;
-  max-height: 10vh;
+  max-height: 5vh;
   height: 100%;
   font-size: 5vh;
   font-family: "Orbitron", sans-serif;

@@ -1,0 +1,180 @@
+.circuits-big {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  max-width: 200vh;
+  max-height: 80vh;
+  width: 100%;
+  height: 100%;
+  background-color: #000000;
+  background-image: linear-gradient(315deg, #000000 0%, #7f8c8d 74%);
+  border: 1vh double #800020;
+  border-radius: 5vh;
+  box-shadow: 10px 10px 20px rgb(0, 0, 0);
+}
+.circuits-small {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.circuit-name {
+  text-decoration: none;
+  font-size: 2.5vh;
+  height: inherit;
+  width: 85%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  word-spacing: 3px;
+  letter-spacing: 3px;
+  text-shadow: -1px 1px 1px #000000;
+  font-family: "Orbitron", sans-serif;
+  color: rgb(255, 255, 255);
+}
+.btn-circuit {
+  display: flex;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.384);
+  border: 1vh groove;
+  border-radius: 2vh;
+  border-top-color: rgba(27, 228, 208, 0.527);
+  border-left-color: rgba(27, 228, 208, 0.555);
+  border-bottom-color: #dc0000bb;
+  border-right-color: #dc0000c7;
+  box-shadow: 0 0 20 rgb(32, 32, 32);
+  height: 6vh;
+  width: 70vh;
+  background-image: url(../CircuitsLogo/country-logo/americas.png);
+  background-size: 15% 100%;
+  background-repeat: no-repeat;
+  background-position-x: +100%;
+}
+.circuits-list {
+  display: flex;
+  flex-direction: column;
+  max-height: 90vh;
+  height: 100%;
+  max-width: 70vh;
+  width: 100%;
+  gap: 2vh;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+$size: 15vh;
+$thickness: 5px;
+$angle: 40deg;
+$angleHover: 30deg;
+$angleActive: 25deg;
+
+@mixin arrowTransform($angle, $x: 0, $y: 0) {
+  i:first-child {
+    transform: translate($x, $y) rotate($angle);
+  }
+
+  i:last-child {
+    transform: translate($x, -$y) rotate(-$angle);
+  }
+}
+
+button {
+  -webkit-appearance: none;
+  background: transparent;
+  border: 0;
+  outline: 0;
+}
+
+.paginate {
+  max-height: 20vh;
+  height: 100%;
+  max-width: 20vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  cursor: pointer;
+  transform: translate3d(0, 0, 0); // fixes flicker in webkit
+  position: absolute;
+  -webkit-filter: drop-shadow(0 2px 0px rgba(0, 0, 0, 0.2));
+
+  i {
+    position: absolute;
+    width: $size;
+    height: $thickness;
+    border-radius: $thickness / 2;
+    background: #fff;
+    transition: all 0.15s ease;
+  }
+
+  &.left {
+    top: 40vh;
+    left: 30vh;
+    i {
+      transform-origin: 0% 50%;
+    }
+
+    @include arrowTransform($angle, 0, -1px);
+
+    &:hover {
+      @include arrowTransform($angleHover, 0, -1px);
+    }
+
+    &:active {
+      @include arrowTransform($angleActive, 1px, -1px);
+    }
+
+    &[data-state="disabled"] {
+      @include arrowTransform(0deg, -5px, 0);
+
+      &:hover {
+        @include arrowTransform(0deg, -5px, 0);
+      }
+    }
+  }
+
+  &.right {
+    top: 40vh;
+    right: 30vh;
+    i {
+      transform-origin: 100% 50%;
+    }
+
+    @include arrowTransform($angle, 0, 1px);
+
+    &:hover {
+      @include arrowTransform($angleHover, 0, 1px);
+    }
+
+    &:active {
+      @include arrowTransform($angleActive, 1px, 1px);
+    }
+
+    &[data-state="disabled"] {
+      @include arrowTransform(0deg, 5px, 0);
+
+      &:hover {
+        @include arrowTransform(0deg, 5px, 0);
+      }
+    }
+  }
+
+  &[data-state="disabled"] {
+    opacity: 0.3;
+    cursor: default;
+  }
+}
+
+.counter {
+  //   text-align: center;
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  margin-top: -15px;
+  font-size: 30px;
+  font-family: Helvetica, sans-serif;
+  text-shadow: 0px 2px 0px rgba(0, 0, 0, 0.2);
+  color: #fff;
+}

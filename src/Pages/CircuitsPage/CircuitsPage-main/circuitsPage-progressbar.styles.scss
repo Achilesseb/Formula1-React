@@ -1,0 +1,29 @@
+:root {
+  --gradient-progressBar: linear-gradient(
+    to right,
+    var(--color-mercedes),
+    var(--color-ferrari)
+  );
+}
+.progress {
+  width: 120vh;
+  display: flex;
+  align-self: center;
+}
+.progress-bar-background {
+  height: 30px;
+  background-color: rgba(128, 128, 128, 0.692);
+  width: inherit;
+  z-index: 1;
+  border-radius: 20px;
+}
+.progress-bar {
+  height: inherit;
+  top: 0;
+  /* transform: scale(1.05); */
+  border-radius: 20px;
+  background-image: var(--gradient-progressBar);
+  transition: width 2s ease;
+  max-width: 100%;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.452) inset;
+}
