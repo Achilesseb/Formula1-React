@@ -6,7 +6,6 @@ import { ProgressBar } from "./circuitsPage-progressbar-component";
 class CircuitsPage extends React.Component {
   constructor(props) {
     super(props);
-
     this.state = {
       circuits: [],
       page: 1,
@@ -43,7 +42,11 @@ class CircuitsPage extends React.Component {
     const CircuitsDisplayed = () =>
       circuitsOnThisPage.map((circuit) => (
         <div className="btn-circuit">
-          <Link to="/" className="circuit-name">
+          <Link
+            to={`/circuits/:americas`}
+            className="circuit-name"
+            props={this.state.circuits}
+          >
             {circuit.circuitName}
           </Link>
         </div>

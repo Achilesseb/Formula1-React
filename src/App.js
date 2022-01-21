@@ -6,6 +6,8 @@ import StandingsPage from "./Pages/StandingsPage/StandingsPage-main/standingsPag
 import DriversStandingsPage from "./Pages/StandingsPage/DriversStandingsPage/driversStandingsPage-component";
 import ConstructorStandingsPage from "./Pages/StandingsPage/ConstructorsStandingsPage/constructorsStandings-component";
 import CircuitsPage from "./Pages/CircuitsPage/CircuitsPage-main/circuitsPage-main-component";
+import Circuit from "./Pages/CircuitsPage/CircuitsPage-main/CircuitPage-specificCircuit/circuitpage-specificCircuit.component";
+import Drivers from "./Pages/DriversPage/driversPage.component";
 
 function App() {
   return (
@@ -23,7 +25,9 @@ function App() {
             path="/standings/constructors"
             element={<ConstructorStandingsPage />}
           />
-          <Route path="/circuits" element={<CircuitsPage />} />
+          <Route eaxct path="/circuits" element={<CircuitsPage />} />
+          <Route exact path="/circuits/:americas" element={<Circuit />} />
+          <Route path="/drivers" element={<Drivers />} />
         </Routes>
       </div>
     </div>

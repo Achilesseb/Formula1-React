@@ -1,6 +1,6 @@
 import "./intropage-component.styles.scss";
 import ConstructorsStandings from "../introPage-constructorsStandings/introPage-constructors-component";
-import Standings from "../introPage-driversStandings/introPage-standings-component";
+import DriverStandings from "../introPage-driversStandings/introPage-standings-component";
 
 const IntroPage = () => {
   return (
@@ -12,10 +12,8 @@ const IntroPage = () => {
         <h2>of</h2>
         <h1 className="highlight">Formula 1</h1>
       </div>
-
       <div className="intropage-preview">
-        <Standings />
-
+        <DriverStandings />
         <ConstructorsStandings />
       </div>
     </div>
