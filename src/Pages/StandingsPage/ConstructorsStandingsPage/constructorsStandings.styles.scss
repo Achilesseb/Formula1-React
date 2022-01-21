@@ -72,9 +72,12 @@
 
 .logo-standings {
   display: flex;
-  height: 12vh;
-  width: 20vh;
+  margin-right: 2vh;
+  max-height: 10vh;
+  max-width: 15vh;
+  height: 100%;
+  width: 100%;
   aspect-ratio: 1;
   justify-content: flex-end;
-  opacity: 0.9;
+  opacity: 0.5;
 }
