@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import "./introPage-constructors.styles.scss";
+import "../introPage-driversStandings/introPage-standings.styles.scss";
 
 const ConstructorsStandings = () => {
   const constructorsData = useSelector((data) => data[1].ConstructorStandings);
@@ -9,18 +9,16 @@ const ConstructorsStandings = () => {
     constructorsData
       .filter((standings) => standings.position < 5)
       .map((standing) => {
-        console.log(standing);
+        let data = [];
         const { position, points } = standing;
-        const { name } = standing.Constructor;
+        const { name: teamName } = standing.Constructor;
+        data.push([position, teamName, points]);
         return (
-          <tbody>
-            <tr className="constructors-standigs-item">
-              <th className="constructors-standings-name">{`${
-                position + ". " + name
-              }`}</th>
-              <th className="constructors-standings-points">{points} pts</th>
-            </tr>
-          </tbody>
+          <tr className="constructors-standigs-item">
+            {data[0].map((data) => (
+              <th className="constructors-standings-cell">{data}</th>
+            ))}
+          </tr>
         );
       });
   return (
@@ -29,7 +27,9 @@ const ConstructorsStandings = () => {
         2021 Constructors Standings
       </div>
       <table className="constructors-standings-table">
-        <ConstructorStandingItems />
+        <tbody className="constructors-standings-body">
+          <ConstructorStandingItems />
+        </tbody>
       </table>
     </div>
   );

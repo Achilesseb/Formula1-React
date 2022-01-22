@@ -1,37 +1,44 @@
 .option {
   color: white;
+  max-width: 25vh;
+  width: 100%;
   font-size: 3vh;
   display: flex;
   text-decoration: none;
+  justify-content: center;
+  align-content: center;
   transition: background-color 0.5s ease;
   font-family: "Orbitron", sans-serif;
-  letter-spacing: 0.5vh;
+  letter-spacing: 0.1vh;
   align-self: center;
+  border-radius: 1vh;
   &.logo {
   }
 }
 .option:hover {
   cursor: pointer;
-  padding: 0.5vh;
+  padding: 0.3vh;
+
   background-color: rgba(0, 0, 0, 0.137);
   transform: scale(1.05);
   animation: popOut 0.2s;
 }
 .navigation-links {
   display: flex;
+  max-width: 180vh;
   width: 100%;
-
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
 .logo {
   max-height: 9vh;
   height: 100%;
-  width: 15vh;
+  max-width: 20vh;
+  width: 100%;
 }
 .logo:hover {
   cursor: pointer;
   padding: 0;
   background-color: inherit;
-  transform: scale(1.1);
-  animation: popOut 0.2s;
+  transform: scale(1.05);
+  animation: popOut 0.1s;
 }

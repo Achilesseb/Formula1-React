@@ -1,28 +1,6 @@
-.constructors-standigs-item {
-  font-size: 3vh;
-  font-family: Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  letter-spacing: 3px;
-  color: rgb(0, 0, 0);
-}
-
-.constructors-standings-table {
-  border-spacing: 0;
-  max-width: 50vh;
-  width: 100%;
-}
-
-td {
-  text-align: center;
-}
-
-.constructors-standings-label {
-  font-size: 3vh;
-  margin-bottom: 3vh;
-  font-family: "Orbitron", sans-serif;
-  letter-spacing: 0.5vh;
-  overflow: break-word;
-}
 .constructors-standings {
+  max-width: 60vh;
+  width: 100%;
   background-color: rgba(0, 0, 0, 0.753);
   margin: 1vh;
   padding: 1vh;
@@ -30,13 +8,58 @@ td {
   border-radius: 5vh;
   box-shadow: 10px 10px 20px rgb(0, 0, 0);
 }
-.constructors-standings-name {
-  display: flex;
-  justify-content: flex-start;
-  color: white;
+.constructors-standigs-item {
+  font-size: 3vh;
+  font-family: Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  letter-spacing: 3px;
+  color: rgb(0, 0, 0);
+  width: 100%;
+  display: grid;
+  grid-template-columns: 20% 60% 20%;
 }
-.constructors-standings-points {
+
+.constructors-standings-table {
+  border-spacing: 0;
+  max-width: 60vh;
+  width: 100%;
   display: flex;
-  justify-content: flex-end;
+  flex-direction: column;
+}
+
+td {
+  text-align: center;
+}
+.constructors-standings-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1vh;
+}
+.constructors-standings-label {
+  font-size: 3vh;
+  margin-bottom: 3vh;
+  font-family: "Orbitron", sans-serif;
+  letter-spacing: 0.5vh;
+  overflow: break-word;
+}
+.constructors-standings-cell {
+  color: white;
+  text-align: left;
+  display: flex;
+}
+.constructors-standings-cell:nth-child(1) {
+  color: white;
+  max-width: 10vh;
+  width: 100%;
+}
+.constructors-standings-cell:nth-child(2) {
+  color: white;
+  max-width: 40vh;
+  width: 100%;
+  justify-content: flex-start;
+}
+.constructors-standings-cell:nth-child(3) {
+  display: flex;
+  max-width: 15vh;
+  width: 100%;
   color: #e91e03;
 }

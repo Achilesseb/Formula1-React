@@ -9,22 +9,26 @@ const DriverStandings = () => {
     driversStanding
       .filter((standings) => standings.position <= 4)
       .map((standings) => {
-        const { points } = standings;
+        let data = [];
+        const { points, position } = standings;
         const { familyName, givenName } = standings.Driver;
+        const driverName = `${givenName + " " + familyName}`;
+        data.push([position, driverName, points]);
         return (
           <tr className="constructors-standigs-item">
-            <th className="constructors-standings-name">{`${
-              givenName + " " + familyName
-            }`}</th>
-            <th className="constructors-standings-points">{points}pts</th>
+            {data[0].map((data) => (
+              <th className="constructors-standings-cell">{data}</th>
+            ))}
           </tr>
         );
       });
   return (
     <div className="constructors-standings">
-      <div className="constructors-standings-label">2021 Drivers Standings</div>
+      <div className="constructors-standings-label">
+        2021 Drivers Championship Standings
+      </div>
       <table className="constructors-standings-table">
-        <tbody>
+        <tbody className="constructors-standings-body">
           <StandingItems />
         </tbody>
       </table>
