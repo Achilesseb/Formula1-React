@@ -44,7 +44,8 @@
   border-right-color: #dc0000c7;
   box-shadow: 0 0 20 rgb(32, 32, 32);
   height: 6vh;
-  width: 70vh;
+  max-width: 70vh;
+  width: 100%;
   background-image: url(../CircuitsLogo/country-logo/americas.png);
   background-size: 15% 100%;
   background-repeat: no-repeat;
@@ -64,7 +65,7 @@
 }
 
 $size: 15vh;
-$thickness: 5px;
+$thickness: 1vh;
 $angle: 40deg;
 $angleHover: 30deg;
 $angleActive: 25deg;
@@ -87,7 +88,7 @@ button {
 }
 
 .paginate {
-  max-height: 20vh;
+  max-height: 10vh;
   height: 100%;
   max-width: 20vh;
   width: 100%;
@@ -111,7 +112,7 @@ button {
 
   &.left {
     top: 40vh;
-    left: 30vh;
+    left: 5%;
     i {
       transform-origin: 0% 50%;
     }
@@ -137,7 +138,7 @@ button {
 
   &.right {
     top: 40vh;
-    right: 30vh;
+    right: 5%;
     i {
       transform-origin: 100% 50%;
     }

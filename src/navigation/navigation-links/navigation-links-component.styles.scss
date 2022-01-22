@@ -30,9 +30,9 @@
   justify-content: space-between;
 }
 .logo {
-  max-height: 9vh;
+  min-height: 2vh;
   height: 100%;
-  max-width: 20vh;
+  min-width: 6vh;
   width: 100%;
 }
 .logo:hover {

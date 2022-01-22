@@ -1,57 +1,52 @@
 import React from "react";
 import "./driversPage.styles.scss";
 import "../../root.scss";
-import alonso from "./drivers/alonso.png";
+import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
-class Drivers extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      drivers: [],
-      images: {},
-    };
-  }
-
-  componentDidMount() {
-    fetch("http://ergast.com/api/f1/current/driverStandings.json")
-      .then((res) => res.json())
-      .then((result) => {
-        console.log(result);
-        const dataRaw =
-          result.MRData.StandingsTable.StandingsLists[0].DriverStandings;
-        const driversData = dataRaw.map((data) => data.Driver);
-        const constructorsData = dataRaw.map((data) => data.Constructors);
-        this.setState({ drivers: dataRaw }, () => console.log(this.state));
-      });
-  }
-
-  render() {
-    const DriverCard = () =>
-      this.state.drivers.map((driver) => {
-        const driverData = driver.Driver;
-        const constructorData = driver.Constructors[0];
-        console.log(constructorData);
-        const trStyle = {
-          backgroundImage: `url(${alonso})`,
-          borderColor: `var(--color-${constructorData.constructorId})`,
-        };
-        return (
-          <div className="card-container" style={trStyle}>
-            <h1 className="card-container name">{`${
-              driverData.givenName + " " + driverData.familyName
-            }`}</h1>
-          </div>
-        );
-      });
-    return (
-      <div className="drivers-page">
-        <div className="card-list">
-          {" "}
-          <DriverCard />{" "}
-        </div>
-      </div>
-    );
-  }
+function importAll(r) {
+  return r.keys().map(r);
 }
+
+const images = importAll(
+  require.context("./drivers", false, /\.(png|jpe?g|svg)$/)
+);
+
+const Drivers = () => {
+  const driverData = useSelector((data) => data[0].DriverStandings);
+  const DriverCard = () =>
+    driverData.map((driver) => {
+      const driverData = driver.Driver;
+      const constructorData = driver.Constructors[0];
+      const driverImage = images.find((image) =>
+        image.includes(`${driverData.driverId}`)
+      );
+      const trStyle = {
+        backgroundImage: `url(${driverImage})`,
+        borderColor: `var(--color-${constructorData.constructorId})`,
+        backgroundColor: `var(--color-${constructorData.constructorId})`,
+      };
+      return (
+        <Link
+          className="card-container"
+          style={trStyle}
+          to={`/drivers/:${driverData.driverId}`}
+          state={{ image: driverImage }}
+        >
+          <h1 className="card-container name">{`${
+            driverData.givenName + " " + driverData.familyName
+          }`}</h1>
+        </Link>
+      );
+    });
+  return (
+    <div className="drivers-page">
+      <div className="card-list">
+        {" "}
+        <DriverCard />{" "}
+      </div>
+    </div>
+  );
+};
 
 export default Drivers;

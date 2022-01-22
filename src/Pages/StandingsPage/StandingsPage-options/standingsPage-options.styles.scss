@@ -1,5 +1,6 @@
 .standings-page {
   display: flex;
+  max-width: 200vh;
   width: 100%;
   height: 100%;
   background-color: #000000;
@@ -9,32 +10,34 @@
   border-radius: 5vh;
 }
 .standings-nav {
-  max-width: 180vh;
+  max-width: 200vh;
   width: 100%;
+  max-height: 80vh;
+  height: 100%;
   display: flex;
-  gap: 5vh;
+  gap: 1vh;
   justify-content: space-evenly;
   text-align: center;
 }
 .Standings-main-option {
   display: flex;
   align-items: center;
-  max-width: 85vh;
-  min-height: 60vh;
+  max-width: 70vh;
+  max-height: 50vh;
   height: 100%;
   width: 100%;
-  font-size: 13vh;
+  font-size: 8vh;
   font-family: "Press Start 2", cursive;
   color: white;
   text-shadow: 1vh 2vh 1vh rgb(214, 104, 104);
   text-decoration: none;
   border: 1.5vh double #8000208f;
   border-radius: 5vh;
-
   background-position-x: -2vh;
   background-position-y: -2vh;
-  background-size: 105% 105%;
+  background-size: 110% 105%;
   align-self: center;
+  justify-content: center;
   background-origin: content-box;
   &.drivers {
     background-image: url(../StandingsPage-main/driver-standings-image.png);
