@@ -1,4 +1,4 @@
-import React from "react";
+
 import "./circuitsPage-progressbar.styles.scss";
 
 export const ProgressBar = (props) => {

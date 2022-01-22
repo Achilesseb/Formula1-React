@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { useLocation } from "react-router-dom";
 import "./specificDriverPage.styles.scss";
 import "../../../root.scss";
-import { calcAge, capitalize } from "./utils";
+import { calcAge, capitalize } from "../../../utils";
 
 const Driver = () => {
   const location = useLocation();

@@ -1,29 +1,37 @@
 import React from "react";
 import "./circuitPage-specificCircuit.styles.scss";
 import CircuitsPage from "../circuitsPage-main-component";
-import { useParams } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
+import { useSelector } from "react-redux";
 
-const Circuit = (props) => {
-  console.log(props);
-  // this.state.circuits.find((element) => (element.circuitId = "americas"));
-  const id = window.location.id;
-  console.log(id);
-
+const Circuit = () => {
+  const location = useLocation();
+  const { image } = location.state;
+  console.log(image);
+  const circuitData = useSelector((data) => data[2]);
+  const { pathname } = window.location;
+  const pathId = pathname.slice(`${pathname.indexOf(":") + 1}`);
+  const circuit = circuitData.Circuits.find((data) => {
+    return data.circuitId === pathId;
+  });
   return (
-    <section className="section--3--data">
-      <div className="bg-image--1"></div>
-      <div className="circuit-information">
-        <div className="section__3--title--window"> GRAND PRIX</div>
-        {/* <div className="section__3--container">
-            <img
-              src="/images/circuits-layout/${data.circuitId}.png"
-              className="circuit-track"
-              alt="Circuit - ${data.circuitName}"
-            />
-            <table className="section--3--window-table"></table>
-          </div> */}
+    <div className="circuit-information">
+      <div className="circuit-top-info">
+        <div className="circuit-top-info-name">{circuit.circuitName}</div>
+        <img
+          src={`${image}`}
+          className="country-logo"
+          alt="Circuit - ${data.circuitName}"
+        />
       </div>
-    </section>
+      <div className="section__3--container">
+        <table className="section--3--window-table">
+          <tr>
+            <td></td>
+          </tr>
+        </table>
+      </div>
+    </div>
   );
 };
 export default Circuit;

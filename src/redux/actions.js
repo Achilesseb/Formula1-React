@@ -11,10 +11,13 @@ export const fetchData = () => {
     const constructorsStandingsFetch = await fetch(
       "http://ergast.com/api/f1/current/constructorStandings.json"
     );
-
+    const circuitFetch = await fetch(
+      "http://ergast.com/api/f1/2021/circuits.json"
+    );
     let rawData = await Promise.all([
       driversStandingsFetch,
       constructorsStandingsFetch,
+      circuitFetch,
     ]).then((rawData) => {
       return rawData.map((data) => {
         return data.json();
@@ -27,9 +30,12 @@ export const fetchData = () => {
     const constructorsStandingsData = await rawData[1].then(
       (response) => response.MRData.StandingsTable.StandingsLists[0]
     );
-
+    const circuitsData = await rawData[2].then(
+      (response) => response.MRData.CircuitTable
+    );
     data.push(driverStandingsData);
     data.push(constructorsStandingsData);
+    data.push(circuitsData);
 
     console.log(data);
     dispatch(fetchDataSucces(data));

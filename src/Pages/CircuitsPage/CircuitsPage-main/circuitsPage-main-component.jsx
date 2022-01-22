@@ -2,7 +2,9 @@ import React from "react";
 import "./circuitsPage-main.styles.scss";
 import "../../../root.scss";
 import { Link } from "react-router-dom";
-import { ProgressBar } from "./circuitsPage-progressbar-component";
+import { ProgressBar } from "./progressBar/circuitsPage-progressbar-component";
+import { circuitLogo } from "../../../utils";
+
 class CircuitsPage extends React.Component {
   constructor(props) {
     super(props);
@@ -18,7 +20,6 @@ class CircuitsPage extends React.Component {
     await fetch("http://ergast.com/api/f1/2021/circuits.json")
       .then((res) => res.json())
       .then((result) => {
-        console.log(result);
         const circuitData = result.MRData.CircuitTable.Circuits;
         this.setState({ circuits: circuitData }, () => console.log(this.state));
       });
@@ -32,25 +33,35 @@ class CircuitsPage extends React.Component {
     this.setState({ page: this.state.page - 1 }, () => this.state.page);
   }
   render() {
-    console.log(this.state);
     const totalPages = Math.ceil(this.state.circuits.length / 6);
     this.state.numberOfPages = totalPages;
     const start = (this.state.page - 1) * 6;
     const end = this.state.page * 6;
     const circuitsOnThisPage = this.state.circuits.slice(start, end);
     console.log(circuitsOnThisPage);
+
     const CircuitsDisplayed = () =>
-      circuitsOnThisPage.map((circuit) => (
-        <div className="btn-circuit">
-          <Link
-            to={`/circuits/:americas`}
-            className="circuit-name"
-            props={this.state.circuits}
+      circuitsOnThisPage.map((circuit) => {
+        const countryLogo = circuitLogo.find((logo) =>
+          logo.includes(circuit.circuitId)
+        );
+        return (
+          <div
+            className="btn-circuit"
+            style={{
+              backgroundImage: `url(${countryLogo})`,
+            }}
           >
-            {circuit.circuitName}
-          </Link>
-        </div>
-      ));
+            <Link
+              to={`/circuits/:${circuit.circuitId}`}
+              className="circuit-name"
+              state={{ image: countryLogo }}
+            >
+              {circuit.circuitName}
+            </Link>
+          </div>
+        );
+      });
     return (
       <div className="circuits-big">
         <div className="circuits-small">

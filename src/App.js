@@ -30,8 +30,8 @@ function App() {
             element={<ConstructorStandingsPage />}
           />
           <Route eaxct path="/circuits" element={<CircuitsPage />} />
-          <Route exact path="/circuits/:americas" element={<Circuit />} />
-          <Route path="/drivers" element={<Drivers />} />
+          <Route path="/circuits/:id" element={<Circuit />} />
+          <Route exact path="/drivers" element={<Drivers />} />
           <Route path={`/drivers/:id`} element={<Driver />} />
         </Routes>
       </div>

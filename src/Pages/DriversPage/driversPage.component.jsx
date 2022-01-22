@@ -3,14 +3,7 @@ import "./driversPage.styles.scss";
 import "../../root.scss";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-
-function importAll(r) {
-  return r.keys().map(r);
-}
-
-const images = importAll(
-  require.context("./drivers", false, /\.(png|jpe?g|svg)$/)
-);
+import { driversImages as images } from "../../utils";
 
 const Drivers = () => {
   const driverData = useSelector((data) => data[0].DriverStandings);
