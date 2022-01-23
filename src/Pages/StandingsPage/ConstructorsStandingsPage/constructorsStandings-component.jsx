@@ -21,7 +21,7 @@ const ConstructorStandingsPage = () => {
         return (
           <tr style={trStyle} className="constructors-standigs-row-item">
             {data[0].map((data) => (
-              <th className="constructors-standings-cell">{data}</th>
+              <th className="constructorsPage-standings-cell">{data}</th>
             ))}
           </tr>
         );
