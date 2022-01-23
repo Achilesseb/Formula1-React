@@ -9,6 +9,7 @@ import {
 } from "../../../../utils";
 import { moreDataCircuits } from "../../../../data";
 import wall5 from "../../CircuitsLogo/wall5.jpg";
+import PulseLoader from "react-spinners/PulseLoader";
 
 const Circuit = () => {
   const location = useLocation();
@@ -32,8 +33,12 @@ const Circuit = () => {
   });
   values.push(locality, country);
   keys.push("Locality", "Country");
+
   return (
-    <div className="circuit-information">
+    <div
+      className="circuit-information"
+      style={{ backgroundImage: `url(${wall5})` }}
+    >
       <div className="circuit-top-info">
         <div className="circuit-top-info-name">{circuit.circuitName}</div>
         <div className="country-logo-box">

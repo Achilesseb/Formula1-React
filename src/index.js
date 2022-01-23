@@ -8,24 +8,17 @@ import store from "./redux/store";
 import { fetchData } from "./redux/actions";
 import { Provider } from "react-redux";
 
-store.dispatch(fetchData());
+setTimeout(() => store.dispatch(fetchData()), 1000);
 
-setTimeout(
-  () =>
-    ReactDOM.render(
-      <Provider store={store}>
-        <React.StrictMode>
-          <BrowserRouter>
-            <App />
-          </BrowserRouter>
-        </React.StrictMode>
-      </Provider>,
-      document.getElementById("root")
-    ),
-  1000
+ReactDOM.render(
+  <Provider store={store}>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </Provider>,
+  document.getElementById("root"),
+  // If you want to start measuring performance in your app, pass a function
+  // to log results (for example: reportWebVitals(console.log))
+  // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+  reportWebVitals()
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();

@@ -4,6 +4,8 @@ import { useLocation } from "react-router-dom";
 import "./specificDriverPage.styles.scss";
 import "../../../root.scss";
 import { calcAge, capitalize } from "../../../utils";
+import wall1 from "./wall1.jpg";
+import PulseLoader from "react-spinners/PulseLoader";
 
 const Driver = () => {
   const location = useLocation();
@@ -31,9 +33,13 @@ const Driver = () => {
     nationality: nationality,
     team: teamName,
   };
-
+  const backgroundImage = wall1;
+  console.log(backgroundImage);
   return (
-    <div className="driverView">
+    <div
+      className="driverView"
+      style={{ backgroundImage: `url(${backgroundImage})` }}
+    >
       <div className="driver">
         <img src={`${image}`} className="driver-page-picture" />
         <div

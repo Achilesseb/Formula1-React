@@ -4,6 +4,7 @@ import "./specificConstructor.styles.scss";
 import { moreDataConstructors } from "../../../data";
 import { constructorsLogo, findImageFunction } from "../../../utils";
 import "../../../root.scss";
+import wall2 from "../constructorsImages/wall2.png";
 
 const SpecificConstructor = () => {
   const { images, data } = useLocation().state;
@@ -39,7 +40,10 @@ const SpecificConstructor = () => {
   };
 
   return (
-    <div className="specific-constructor-data">
+    <div
+      className="specific-constructor-data"
+      style={{ backgroundImage: `url(${wall2})` }}
+    >
       <div
         className="constructor-name"
         style={{ color: `var(--color-${data.Constructor.constructorId})` }}

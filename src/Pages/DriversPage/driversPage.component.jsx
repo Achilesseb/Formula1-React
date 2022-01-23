@@ -7,6 +7,7 @@ import { driversImages as images } from "../../utils";
 
 const Drivers = () => {
   const driverData = useSelector((data) => data[0].DriverStandings);
+
   const DriverCard = () =>
     driverData.map((driver) => {
       const driverData = driver.Driver;
@@ -32,6 +33,7 @@ const Drivers = () => {
         </Link>
       );
     });
+
   return (
     <div className="drivers-page">
       <div className="card-list">
