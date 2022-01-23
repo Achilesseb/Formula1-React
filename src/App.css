@@ -28,6 +28,7 @@
   max-width: 200vh;
   width: 100%;
   min-height: 80vh;
+  height: 100%;
   height: auto;
   display: flex;
   flex-direction: row;

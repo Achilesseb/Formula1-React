@@ -32,6 +32,20 @@ export const circuitLayouts = importAll(
     /\.(png|jpe?g|svg)$/
   )
 );
+export const constructorsImages = importAll(
+  require.context(
+    "./Pages/ConstructorsPage/constructorsImages/team-car",
+    false,
+    /\.(png|jpe?g|svg)$/
+  )
+);
+export const constructorsLogo = importAll(
+  require.context(
+    "./Pages/ConstructorsPage/constructorsImages/teams-logo",
+    false,
+    /\.(png|jpe?g|svg)$/
+  )
+);
 
 export const findImageFunction = (pathName, pathId) => {
   return pathName.find((path) => path.includes(pathId));

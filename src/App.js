@@ -1,19 +1,19 @@
 import "./App.css";
 import { NavigationBar } from "./navigation/navigation-component.jsx";
+import { Route, Routes } from "react-router-dom";
+
 import IntroPage from "./Pages/introPage/introPage-main/introPage.component";
-import { matchPath, Route, Routes } from "react-router-dom";
 import StandingsPage from "./Pages/StandingsPage/StandingsPage-main/standingsPage-component";
 import DriversStandingsPage from "./Pages/StandingsPage/DriversStandingsPage/driversStandingsPage-component";
 import ConstructorStandingsPage from "./Pages/StandingsPage/ConstructorsStandingsPage/constructorsStandings-component";
 import CircuitsPage from "./Pages/CircuitsPage/CircuitsPage-main/circuitsPage-main-component";
 import Circuit from "./Pages/CircuitsPage/CircuitsPage-main/CircuitPage-specificCircuit/circuitpage-specificCircuit.component";
 import Drivers from "./Pages/DriversPage/driversPage.component";
-import { useSelector } from "react-redux";
 import Driver from "./Pages/DriversPage/SpecificDriverPage/specificDriverPage-component";
+import Constructors from "./Pages/ConstructorsPage/ConstructorsPage-main/constructorsPage-component";
+import SpecificConstructor from "./Pages/ConstructorsPage/ConstructorsPage-specificConstructor/specificConstructor-component";
 
 function App() {
-  const data = useSelector((data) => data[0].DriverStandings);
-  const idData = data.map((data) => data.Driver.driverId);
   return (
     <div className="App">
       <div className="header">
@@ -33,6 +33,8 @@ function App() {
           <Route path="/circuits/:id" element={<Circuit />} />
           <Route exact path="/drivers" element={<Drivers />} />
           <Route path={`/drivers/:id`} element={<Driver />} />
+          <Route exact path="/constructors" element={<Constructors />} />
+          <Route path="/constructors/:id" element={<SpecificConstructor />} />
         </Routes>
       </div>
     </div>

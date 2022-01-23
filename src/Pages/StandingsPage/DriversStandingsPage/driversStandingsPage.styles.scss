@@ -1,14 +1,11 @@
 .Standings {
   max-width: 200vh;
-  min-height: 80vh;
   width: 100%;
-  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   background-color: #000000;
   background-image: linear-gradient(315deg, #000000 0%, #7f8c8d 74%);
-  border: 1vh double #800020;
   border-radius: 5vh;
   box-shadow: 10px 10px 20px rgb(0, 0, 0);
 }
@@ -57,13 +54,11 @@ tbody.driver-standigs-table-body {
   align-items: center;
 }
 .Standings-label {
-  margin: 2vh;
+  padding-top: 1vh;
   display: flex;
   width: 100%;
-  min-height: 3vh;
-  height: 100%;
   font-size: auto;
-  font-size: max(5vh);
+  font-size: 5vh;
   font-family: "Orbitron", sans-serif;
   justify-content: center;
   align-items: center;
