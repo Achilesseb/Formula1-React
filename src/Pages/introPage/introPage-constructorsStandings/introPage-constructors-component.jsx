@@ -10,9 +10,9 @@ const ConstructorsStandings = () => {
       .filter((standings) => standings.position < 5)
       .map((standing) => {
         let data = [];
-        const { position, points } = standing;
+        const { points } = standing;
         const { name: teamName } = standing.Constructor;
-        data.push([position, teamName, points]);
+        data.push([teamName, points]);
         return (
           <tr className="constructors-standigs-item">
             {data[0].map((data) => (

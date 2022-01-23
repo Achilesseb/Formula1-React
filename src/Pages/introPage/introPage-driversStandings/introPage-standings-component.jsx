@@ -10,10 +10,10 @@ const DriverStandings = () => {
       .filter((standings) => standings.position <= 4)
       .map((standings) => {
         let data = [];
-        const { points, position } = standings;
+        const { points } = standings;
         const { familyName, givenName } = standings.Driver;
         const driverName = `${givenName + " " + familyName}`;
-        data.push([position, driverName, points]);
+        data.push([driverName, points]);
         return (
           <tr className="constructors-standigs-item">
             {data[0].map((data) => (
@@ -24,9 +24,7 @@ const DriverStandings = () => {
       });
   return (
     <div className="constructors-standings">
-      <div className="constructors-standings-label">
-        2021 Drivers Championship Standings
-      </div>
+      <div className="constructors-standings-label">2021 Drivers Standings</div>
       <table className="constructors-standings-table">
         <tbody className="constructors-standings-body">
           <StandingItems />

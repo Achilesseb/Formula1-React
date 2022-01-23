@@ -4,10 +4,10 @@
 .intropage {
   max-width: 200vh;
   width: 100%;
-  max-height: 90vh;
   height: 100%;
   display: flex;
   flex-direction: column;
+  gap: 2vh;
   background-image: url(./f12022-car.png);
   background-repeat: no-repeat;
   background-size: cover;
@@ -16,15 +16,16 @@
 .intropage-message {
   max-width: 200vh;
   width: 100%;
-  max-height: 33vh;
+  max-height: 30vh;
   height: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
-  align-items: center;
-  text-shadow: 3px 2px 5px rgba(0, 0, 0, 0.541);
   flex-wrap: wrap;
-  gap: 0;
+  align-items: center;
+  justify-content: center;
+  text-shadow: 3px 2px 5px rgba(0, 0, 0, 0.541);
+  column-gap: 5vh;
+  row-gap: 0vh;
 }
 .highlight {
   position: relative;
@@ -35,20 +36,21 @@
   position: absolute;
   bottom: 0;
   left: 0;
-  max-height: 10vh;
+  max-height: 8vh;
   height: 100%;
   width: 100%;
   z-index: -1;
   border: 1vh groove rgb(255, 255, 255);
-  transform: scale(1.2, 1.05) skewX(-30deg);
+  transform: scale(1.1, 1.05) skewX(-10deg);
   background-image: var(--gradient-primary);
-  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.274);
+  box-shadow: 2vh 2vh 2vh 1vh rgba(0, 0, 0, 0.274);
 }
 h1 {
   z-index: 1;
-  font-size: 7vh;
+  font-size: 6vh;
   color: rgb(255, 255, 255);
   align-items: center;
+  font-family: "Orbitron", sans-serif;
 }
 h2 {
   z-index: 1;
@@ -58,8 +60,10 @@ h2 {
 }
 
 .intropage-preview {
-  margin: 2vh;
+  max-height: 50vh;
+  height: 100%;
   display: flex;
-  align-content: flex-end;
-  justify-content: space-evenly;
+  align-items: center;
+  justify-content: space-around;
+  gap: 5vh;
 }
