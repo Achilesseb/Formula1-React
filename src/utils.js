@@ -25,3 +25,14 @@ export const circuitLogo = importAll(
     /\.(png|jpe?g|svg)$/
   )
 );
+export const circuitLayouts = importAll(
+  require.context(
+    "./Pages/CircuitsPage/CircuitsLogo/circuits-layout",
+    false,
+    /\.(png|jpe?g|svg)$/
+  )
+);
+
+export const findImageFunction = (pathName, pathId) => {
+  return pathName.find((path) => path.includes(pathId));
+};

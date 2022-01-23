@@ -4,6 +4,7 @@ import "../../../root.scss";
 import { Link } from "react-router-dom";
 import { ProgressBar } from "./progressBar/circuitsPage-progressbar-component";
 import { circuitLogo } from "../../../utils";
+import { useSelector } from "react-redux";
 
 class CircuitsPage extends React.Component {
   constructor(props) {
